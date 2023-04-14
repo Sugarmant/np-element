@@ -1,0 +1,13 @@
+.np-mask{position:fixed;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.6);z-index:999;animation:ani-mask-appear .2s linear 1;
+    &[disappear='true']{animation:ani-mask-disappear .1s linear 1;opacity:0;}
+}
+
+@keyframes ani-mask-appear{
+    0%{opacity:0}
+    100%{opacity:1}
+}
+
+@keyframes ani-mask-disappear{
+    0%{opacity:1}
+    100%{opacity:0}
+}

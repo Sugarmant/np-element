@@ -1,0 +1,105 @@
+.np-dialog {
+  width: 400px;
+  position: fixed;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  z-index: 1000;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 30px 15px;
+  opacity: 1;
+  animation: ani-appear 0.2s linear 1;
+}
+.np-dialog[disappear='true'] {
+  animation: ani-disappear 0.1s linear 1;
+  opacity: 0;
+}
+.np-dialog-wrapper {
+  position: relative;
+}
+.np-dialog-title {
+  font-size: 14px;
+  color: #333;
+  display: flex;
+  justify-content: center;
+}
+.np-dialog-content {
+  width: 100%;
+  margin: 30px 0;
+  font-size: 14px;
+  color: #666;
+  padding: 0 30px;
+  box-sizing: border-box;
+  text-align: center;
+  letter-spacing: 0.5px;
+  margin-bottom: 45px;
+}
+.np-dialog-handle {
+  display: flex;
+  justify-content: center;
+}
+.np-dialog-handle-cancelBtn,
+.np-dialog-handle-confirmBtn {
+  width: 120px;
+  height: 36px;
+  line-height: 36px;
+  padding: 0;
+  margin: 0;
+  background-color: #FEA406;
+  color: #fff;
+  font-size: 14px;
+  border: solid 1px #FEA406;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.1s;
+}
+.np-dialog-handle-cancelBtn {
+  margin-right: 15px;
+  background-color: #f7f7f7;
+  color: #333;
+  border-color: #f7f7f7;
+}
+.np-dialog-handle-cancelBtn:hover {
+  background-color: #f0f0f0;
+}
+.np-dialog-handle-confirmBtn:hover {
+  background-color: #f39b00;
+}
+.np-dialog-closeBtn {
+  padding: 0;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  right: 0;
+  top: -4px;
+  background: none;
+  border: none;
+  fill: #999;
+  cursor: pointer;
+  transition: 0.1s;
+}
+.np-dialog-closeBtn:hover {
+  background-color: #f7f7f7;
+}
+@keyframes ani-appear {
+  0% {
+    opacity: 0;
+    margin-top: 50px;
+  }
+  100% {
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+@keyframes ani-disappear {
+  0% {
+    opacity: 1;
+    margin-top: 0;
+  }
+  100% {
+    opacity: 0;
+    margin-top: 50px;
+  }
+}

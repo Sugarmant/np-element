@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{height:10000px}
+    </style>
+</head>
+<body>
+    <button class="btn1">dialog弹窗</button>
+    <button class="btn2">loading加载</button>
+
+    <script src="../dist/np.js"></script>
+    <script>
+        document.querySelector('.btn1').addEventListener('click',function(){
+            np.dialog.open({
+                // mask:false,
+                // opacity:0,
+                content:"手动抹除仅支持本地文件上传，请在视频提取中将视频下载到电脑后再使用。",
+                html:'手动抹除仅支持本地文件上传，请在<a href="javascript:;">视频提取</a>中将视频下载到电脑后再使用。',
+                confirmText:"去提取",
+                // cancelText:"去提取",
+                // confirm:false,
+                // cancel:false,
+                onConfirm:e=>{
+                    console.log('确认')
+                },
+                onCancel:e=>{
+                    console.log('取消')
+                },
+                onClose:e=>{
+                    console.log('关闭')
+                }
+            })
+        })
+
+        document.querySelector(".btn2").addEventListener('click',function(){
+            np.loading.show({
+                // text:"1"
+            })
+
+            setTimeout(()=>{
+                np.loading.hide()
+            },2000)
+        })
+    </script>
+</body>
+</html>
